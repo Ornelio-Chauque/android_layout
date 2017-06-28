@@ -1,0 +1,96 @@
+<!--This is the root Document element-->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    
+    <!--The main layout content here you put the content that will apear when there  is internet connection-->
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context="com.neodoli.teri.Fragment.AtmFragment">
+
+        <com.google.android.gms.maps.MapView
+            android:layout_width="match_parent"
+            android:id="@+id/google_map"
+            android:layout_height="match_parent">
+
+
+        </com.google.android.gms.maps.MapView>
+
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:id="@+id/fa"
+            app:srcCompat="@drawable/ic_add_black_24dp"
+            android:layout_gravity="bottom|right"
+            android:tint="@color/wait_color"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+    <!-- End of main content-->
+    
+    
+    <!--The no infornet portion is puted bellow, this layout has a informarive text and a button to try again-->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/internet"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:id="@+id/text1"
+            android:textColor="@color/colorAccent"
+            android:text="@string/internet_error"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/btn"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/text1"
+            android:background="@color/colorAccent"
+            android:textColor="@color/wait_color"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Tente Novamente"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+    
+    <!--End of the no internet connection portion-->
+
+
+    <!--Option: this is used to show a progress bar on the main content -->
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:id="@+id/progress_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_height="wrap_content" />
+    
+   <--End progress bar portion-->
+
+</RelativeLayout>
+
+<--End document root-->
+
+
